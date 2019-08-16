@@ -29,10 +29,14 @@ app.use(express.json());
 require("./app/routing/apiRoutes")(app);
 require("./app/routing/htmlRoutes")(app);
 
+//need to set where the images are
+app.use(express.static(__dirname));
+console.log("dirname "+__dirname)
 // =============================================================================
 // LISTENER
 // The below code effectively "starts" our server
 // =============================================================================
+
 
 app.listen(PORT, function() {
   console.log("App listening on PORT: " + PORT);
