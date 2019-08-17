@@ -1,7 +1,7 @@
 # FriendFinder
-### full stack application to help you find your new best friend!
+### Full stack application to help you find your new best friend!
 
-### Developed by Deb Warrick debwarrick.com
+### Developed by Deb Warrick https://debwarrick.com
 
 #### FriendFinder is a Node.js application using the Express web application framework.
 #### It is deployed on Heroku at https://warm-hamlet-88454.herokuapp.com
@@ -20,3 +20,4 @@ The program will run an algorythm to mathmatically determine compatability, and 
 **Path** - working with file and directory paths.  
 
 
+## Thanks for visiting, and good luck finding your new friends!
