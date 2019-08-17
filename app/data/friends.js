@@ -7,8 +7,8 @@
 
 var friendsArray = [
   {
-    "name":"Deb",
-    "photo":"images/mary.jpg",
+    "name":"Mary",
+    "photo":"https://github.com/dawarrick/FriendFinder/blob/master/app/data/Images/mary.jpg?raw=true",
     "scores":[
         5,
         1,
@@ -24,7 +24,7 @@ var friendsArray = [
   },
   {
     "name":"Sally",
-    "photo":"images/sally.jpg",
+    "photo":"https://github.com/dawarrick/FriendFinder/blob/master/app/data/Images/sally.jpg?raw=true",
     "scores":[
         2,
         3,
@@ -40,7 +40,7 @@ var friendsArray = [
   },
   {
     "name":"John",
-    "photo":"images/john.jpg",
+    "photo":"https://raw.githubusercontent.com/dawarrick/FriendFinder/master/app/data/Images/john.jpg?token=AL4TGHZQBBWTWBTP5FAQCNK5LBWVU",
     "scores":[
         1,
         2,
@@ -56,7 +56,7 @@ var friendsArray = [
   },
   {
     "name":"Greg",
-    "photo":"images/greg.jpg",
+    "photo":"https://github.com/dawarrick/FriendFinder/blob/master/app/data/Images/greg.jpg?raw=true",
     "scores":[
         5,
         4,
