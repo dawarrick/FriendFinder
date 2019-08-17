@@ -39,8 +39,8 @@ var friendsArray = [
       ]
   },
   {
-    "name":"John",
-    "photo":"https://raw.githubusercontent.com/dawarrick/FriendFinder/master/app/data/Images/john.jpg?token=AL4TGHZQBBWTWBTP5FAQCNK5LBWVU",
+    "name":"Brad",
+    "photo":"http://www.gstatic.com/tv/thumb/persons/1366/1366_v9_bb.jpg",
     "scores":[
         1,
         2,

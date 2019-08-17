@@ -17,5 +17,6 @@ The program will run an algorythm to mathmatically determine compatability, and 
 ### FriendFinder uses the following Node.js,a nd the NPM libraries listed below
 
 **Express** - to handle the server processes.  
+**Path** - working with file and directory paths.  
 
 

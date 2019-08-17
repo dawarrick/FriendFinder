@@ -39,7 +39,7 @@ module.exports = function (app) {
 
     //find the best match
     var matchIndex = 0;
-    var matchDif = 0;
+    var matchDif = 99;
     var friendsLength = friendsData.length - 1;
     for (var i = 0; i < friendsLength; i++) {
       var totalDif = 0;
@@ -47,7 +47,7 @@ module.exports = function (app) {
       for (var j = 0; j < 10; j++) {
         totalDif += Math.abs(friendsData[i].scores[j] - friendsData[friendsLength].scores[j]);
       }
-
+      
       //if this is a better match, store those values to return
       if (totalDif < matchDif) {
         matchDif = totalDif;
