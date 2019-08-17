@@ -269,14 +269,14 @@
         var isValid = true;
         $(".form-control").each(function () {
           if ($(this).val() === "") {
-            isValid = true;
+            isValid = false;
           }
         });
 
         $(".chosen-select").each(function () {
 
           if ($(this).val() === "") {
-            isValid = true;
+            isValid = false;
           }
         });
         return isValid;
