@@ -5,7 +5,6 @@
 // ===============================================================================
 
 var friendsData = require("../data/friends");
-var path = require("path");
 
 
 // ===============================================================================
@@ -37,9 +36,11 @@ module.exports = function (app) {
     // It will do this by sending out the value "true" have a table
     // req.body is available since we're using the body parsing middleware
     friendsData.push(req.body);
+
+    //find the best match
     var matchIndex = 0;
     var matchDif = 0;
-    var friendsLength = friendsData.length-1;
+    var friendsLength = friendsData.length - 1;
     for (var i = 0; i < friendsLength; i++) {
       var totalDif = 0;
       //loop through the responses and determine the net difference.
@@ -53,17 +54,8 @@ module.exports = function (app) {
         matchIndex = i;
       }
     }
-   res.json(friendsData[matchIndex]);
+    res.json(friendsData[matchIndex]);
   });
 
-  // ---------------------------------------------------------------------------
-  // I added this below code so you could clear out the table while working with the functionality.
-  // Don"t worry about it!
 
- /* app.post("/api/clear", function (req, res) {
-    // Empty out the arrays of data
-    friendsData.length = 0;
-
-    res.json({ ok: true });
-  });
-};*/
+}; 
