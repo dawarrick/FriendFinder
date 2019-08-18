@@ -40,7 +40,7 @@ var friendsArray = [
   },
   {
     "name":"Brad",
-    "photo":"http://www.gstatic.com/tv/thumb/persons/1366/1366_v9_bb.jpg",
+    "photo":"https://github.com/dawarrick/FriendFinder/blob/master/app/data/Images/brad.jpg?raw=true",
     "scores":[
         1,
         2,

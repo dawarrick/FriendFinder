@@ -29,8 +29,8 @@ app.use(express.json());
 require("./app/routing/apiRoutes")(app);
 require("./app/routing/htmlRoutes")(app);
 
-//need to set where the images are
-app.use(express.static(__dirname));
+//need to set directory
+app.use(express.static(__dirname + '/public'));
 
 // =============================================================================
 // LISTENER

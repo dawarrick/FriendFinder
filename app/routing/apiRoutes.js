@@ -1,7 +1,6 @@
 // ===============================================================================
 // LOAD DATA
-// We are linking our routes to a series of "data" sources.
-// These data sources hold arrays of information on table-data, waitinglist, etc.
+// This data source hold arrays of information on table-data, waitinglist, etc.
 // ===============================================================================
 
 var friendsData = require("../data/friends");
@@ -12,34 +11,27 @@ var friendsData = require("../data/friends");
 // ===============================================================================
 
 module.exports = function (app) {
-  // API GET Requests
-  // Below code handles when users "visit" a page.
-  // In each of the below cases when a user visits a link
-  // (ex: localhost:PORT/api/admin... they are shown a JSON of the data in the table)
+
   // ---------------------------------------------------------------------------
+  //this will retrieve the current friends from the friends.js
 
   app.get("/api/friends", function (req, res) {
     res.json(friendsData);
   });
 
 
-  // API POST Requests
-  // Below code handles when a user submits a form and thus submits data to the server.
-  // In each of the below cases, when a user submits form data (a JSON object)
-  // ...the JSON is pushed to the appropriate JavaScript array
-  // (ex. User fills out a reservation request... this data is then sent to the server...
-  // Then the server saves the data to the tableData array)
   // ---------------------------------------------------------------------------
+  //this post will find the closest match, and return it to the html
+  //closest match is the sum of the differnce for each question.
+  //it will also add the new person to the array
 
   app.post("/api/friends", function (req, res) {
-    // Note the code here. Our "server" will respond to requests and let users know if they have a table or not.
-    // It will do this by sending out the value "true" have a table
-    // req.body is available since we're using the body parsing middleware
+
     friendsData.push(req.body);
 
     //find the best match
     var matchIndex = 0;
-    var matchDif = 99;
+    var matchDif = 99;    //initialize to greater than the max difference possible
     var friendsLength = friendsData.length - 1;
     for (var i = 0; i < friendsLength; i++) {
       var totalDif = 0;
@@ -47,7 +39,7 @@ module.exports = function (app) {
       for (var j = 0; j < 10; j++) {
         totalDif += Math.abs(friendsData[i].scores[j] - friendsData[friendsLength].scores[j]);
       }
-      
+
       //if this is a better match, store those values to return
       if (totalDif < matchDif) {
         matchDif = totalDif;
@@ -57,5 +49,21 @@ module.exports = function (app) {
     res.json(friendsData[matchIndex]);
   });
 
+  //the view post will return the information about the name that is sent in.
+  app.post("/api/view", function (req, res) {
+
+    //see if name is in the friends list
+    var matchIndex = friendsData.findIndex(x => x.name.toUpperCase() === req.body.name.toUpperCase());
+
+    var noMatch = { name: 'Nobody was found with that name, try again.', 'photo': '' };
+
+    //return the information if found, otherwise the no-match
+    if (matchIndex > -1) {
+      res.json(friendsData[matchIndex]);
+    }
+    else {
+      res.json(noMatch);
+    }
+  });
 
 }; 
